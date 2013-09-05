@@ -1,0 +1,10 @@
+-- pointfree
+:def pf \str -> return $ ":! pointfree \"" ++ str ++ "\""
+-- documentation
+:def doc \input -> return (":!haskell-docs " ++ input)
+-- ghc-vis
+:script //usr/share/ghc-vis-0.7.1/ghc-7.6.3/ghci
+-- hoogle
+:def hoogle \str -> return $ ":! hoogle --count=15 \"" ++ str ++ "\""
+
+:set prompt "λ> "
