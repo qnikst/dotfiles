@@ -1,0 +1,51 @@
+[extensions]
+color =
+convert =
+extdiff =
+fetch =
+highlight =
+histedit =
+mq =
+pager =
+patchbomb =
+progress =
+purge =
+rebase =
+record =
+relink =
+
+[ui]
+username = Alexander Vershilov <alexander.vershilov@gmail.com>
+merge = meld
+ignore = ~/.hgignore
+
+[merge-tools]
+meld.args=$base $local $other -o $output
+meld.gui=True
+
+[email]
+method = smtp
+from =  Alexander Vershilov <alexander.vershilov@gmail.com>
+
+[smtp]
+host = smtp.gmail.com
+tls = starttls
+username = alexander.vershilov@gmail.com
+port = 587
+
+[diff]
+git = True
+
+[alias]
+drop = revert --no-backup
+upull = pull --update
+tipp = tip -p
+smartrebase = rebase -b 'head() and branch(.) and draft()'
+                     -d 'head() and branch(.) and public()'
+postdiff = !$HG diff $@ | lodgeit -l diff
+qtip = log --rev qtip --patch
+today = log -u vershilov -u qnikst --date ">0:00"
+
+[pager]
+attend = annotate, diff, glog, help, log, qdiff, tip
+pager = less --raw-control-chars --no-init --quit-if-one-screen --quit-at-eof
