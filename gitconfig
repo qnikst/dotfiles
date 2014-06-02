@@ -1,0 +1,17 @@
+[user]
+	email = alexander.vershilov@gmail.com
+	name = Alexander Vershilov
+[alias]
+	co = checkout
+	st = status
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=sort
+	type = cat-file -t
+	dump = cat-file -d
+[color]
+	ui = auto
+[push]
+	default = matching
+[core]
+	autocrlf = input
+	whitespace = trailing-space, space-before-tab
